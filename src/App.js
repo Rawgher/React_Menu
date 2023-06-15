@@ -15,12 +15,31 @@ function Bread() {
   );
 }
 
+function Header() {
+  return <h1>Quick React Baking Co.</h1>;
+}
+
+function Menu() {
+  return (
+    <div>
+      <h2>Our Menu</h2>
+      <Bread />
+      <Bread />
+      <Bread />
+    </div>
+  );
+}
+
+function Footer() {
+  return <footer>Right now it is {new Date().toLocaleTimeString()}. We're currently open!</footer>;
+}
+
 function App() {
   return (
     <div className="App">
-      <Bread />
-      <Bread />
-      <Bread />
+      <Header />
+      <Menu />
+      <Footer />
     </div>
   );
 }
