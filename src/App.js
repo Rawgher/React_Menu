@@ -1,21 +1,5 @@
 import './App.css';
-// import breadData from './data';
-
-function Bread() {
-  return (
-    <div className="bread">
-      <img
-        src="https://images.unsplash.com/photo-1620921568790-c1cf8984624c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1548&q=80"
-        alt="Brioche Bread"
-      />
-      <div>
-        <h3>Brioche</h3>
-        <p>Light and slighly puffy bread</p>
-        <p>$18</p>
-      </div>
-    </div>
-  );
-}
+import breadData from './data';
 
 function Header() {
   return (
@@ -29,10 +13,32 @@ function Menu() {
   return (
     <main className="menu">
       <h2>Our Menu</h2>
-      <Bread />
-      <Bread />
-      <Bread />
+      <Bread
+        name="Brioche"
+        description="Light and slighly puffy bread"
+        price={18}
+        img="https://images.unsplash.com/photo-1620921568790-c1cf8984624c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1548&q=80"
+      />
+      <Bread
+        name="Foccacia"
+        description="Oven backed bread with vegetable toppings"
+        price={10}
+        img="https://images.unsplash.com/photo-1636367989765-db1ebdae1408?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1548&q=80"
+      />
     </main>
+  );
+}
+
+function Bread(props) {
+  return (
+    <div className="bread">
+      <img src={props.img} alt={props.name} />
+      <div>
+        <h3>{props.name}</h3>
+        <p>{props.description}</p>
+        <span>${props.price}</span>
+      </div>
+    </div>
   );
 }
 

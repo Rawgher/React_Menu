@@ -134,6 +134,7 @@ body {
   font-weight: 300;
   font-style: italic;
   margin-bottom: auto;
+  width: 300px;
 }
 
 .bread span {
