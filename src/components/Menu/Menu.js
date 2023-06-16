@@ -1,5 +1,6 @@
-import Bread from './Bread';
-import breadData from '../data';
+import Bread from '../Bread/Bread';
+import breadData from '../../data';
+import './menu.css';
 
 function Menu() {
   const breads = breadData;

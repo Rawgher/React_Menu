@@ -1,3 +1,5 @@
+import './bread.css';
+
 const Bread = ({ breadObj }) => {
   const { img, name, description, price } = breadObj;
 
