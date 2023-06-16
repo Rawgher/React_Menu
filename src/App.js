@@ -13,34 +13,29 @@ function Menu() {
   return (
     <main className="menu">
       <h2>Our Menu</h2>
-      <Bread
-        name="Brioche"
-        description="Light and slighly puffy bread"
-        price={18}
-        img="https://images.unsplash.com/photo-1620921568790-c1cf8984624c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1548&q=80"
-      />
-      <Bread
-        name="Foccacia"
-        description="Oven backed bread with vegetable toppings"
-        price={10}
-        img="https://images.unsplash.com/photo-1636367989765-db1ebdae1408?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1548&q=80"
-      />
+      <ul className="breads">
+        {breadData.map((bread) => (
+          <Bread breadObj={bread} key={bread.name} />
+        ))}
+      </ul>
     </main>
   );
 }
 
-function Bread(props) {
+const Bread = ({ breadObj }) => {
+  const { img, name, description, price } = breadObj;
+
   return (
-    <div className="bread">
-      <img src={props.img} alt={props.name} />
+    <li className="bread">
+      <img src={img} alt={name} />
       <div>
-        <h3>{props.name}</h3>
-        <p>{props.description}</p>
-        <span>${props.price}</span>
+        <h3>{name}</h3>
+        <p>{description}</p>
+        <span>${price}</span>
       </div>
-    </div>
+    </li>
   );
-}
+};
 
 function Footer() {
   const hour = new Date().getHours();
